@@ -1,0 +1,14 @@
+name: cactus-needle
+
+networks:
+    default:
+        name: ${DOCKER_NETWORK}
+
+services:
+    needle-server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8080:8080"
+        restart: unless-stopped
